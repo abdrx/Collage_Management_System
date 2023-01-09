@@ -1,8 +1,9 @@
 import 'package:college_managment/admin/admin_zone.dart';
 import 'admin_zone.dart';
-import 'package:college_managment/utils/ZoneImage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+
+import '../helper/helper.dart';
 
 class Teacher extends StatefulWidget {
   @override
@@ -22,7 +23,10 @@ class _TeacherState extends State<Teacher> {
                 return AdminZone();
               }));
             },
-            child: Icon(Icons.arrow_back, size: 30,),
+            child: Icon(
+              Icons.arrow_back,
+              size: 30,
+            ),
           ),
           backgroundColor: Color(0xfffe5722),
           centerTitle: true,
@@ -35,24 +39,22 @@ class _TeacherState extends State<Teacher> {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(
-                left: 25.0, right: 15.0, bottom: 16.0),
-
+            padding:
+                const EdgeInsets.only(left: 25.0, right: 15.0, bottom: 16.0),
             child: Column(children: <Widget>[
               SizedBox(height: 24),
               InkWell(
-                child:Row(
+                child: Row(
                   children: <Widget>[
                     InkWell(
                         child: ZoneImage("assets/register.png", "REGISTER"),
-                        onTap:  () {
-                        }
+                        onTap: () {}),
+                    SizedBox(
+                      width: 14,
                     ),
-                    SizedBox(width: 14,),
                     InkWell(
                         child: ZoneImage("assets/salary.png", "SALARY"),
-                        onTap:  () {}
-                    )
+                        onTap: () {})
                   ],
                 ),
               ),
@@ -63,5 +65,3 @@ class _TeacherState extends State<Teacher> {
     );
   }
 }
-
-

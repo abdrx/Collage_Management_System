@@ -1,9 +1,9 @@
 import 'package:college_managment/Home_page.dart';
 import 'package:college_managment/admin/s_register.dart';
 import 'package:college_managment/admin/t_register.dart';
-import 'package:college_managment/utils/ZoneImage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../helper/helper.dart';
 import 'student.dart';
 import 'Teacher.dart';
 
@@ -25,7 +25,10 @@ class _AdminZoneState extends State<AdminZone> {
                 return HomePage();
               }));
             },
-            child: Icon(Icons.arrow_back, size: 30,),
+            child: Icon(
+              Icons.arrow_back,
+              size: 30,
+            ),
           ),
           backgroundColor: Color(0xfffe5722),
           centerTitle: true,
@@ -38,31 +41,32 @@ class _AdminZoneState extends State<AdminZone> {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(
-                left: 25.0, right: 15.0, bottom: 16.0),
-
+            padding:
+                const EdgeInsets.only(left: 25.0, right: 15.0, bottom: 16.0),
             child: Column(children: <Widget>[
               SizedBox(height: 24),
               InkWell(
-                child:Row(
+                child: Row(
                   children: <Widget>[
                     InkWell(
                         child: ZoneImage("assets/student.png", "STUDENT"),
-                        onTap:  () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) {
-                            return  SRegister();
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return SRegister();
                           }));
-                        }
+                        }),
+                    SizedBox(
+                      width: 14,
                     ),
-                    SizedBox(width: 14,),
                     InkWell(
                         child: ZoneImage("assets/faculty.png", "TEACHER"),
-                        onTap:  () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) {
-                            return  TRegister();
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return TRegister();
                           }));
-                        }
-                    )
+                        })
                   ],
                 ),
               ),
@@ -73,4 +77,3 @@ class _AdminZoneState extends State<AdminZone> {
     );
   }
 }
-

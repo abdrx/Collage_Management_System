@@ -3,13 +3,12 @@ import 'exam.dart';
 
 class resultpage extends StatefulWidget {
   int marks;
-  resultpage({Key key , @required this.marks}) : super(key : key);
+  resultpage({Key key, @required this.marks}) : super(key: key);
   @override
   _resultpageState createState() => _resultpageState(marks);
 }
 
 class _resultpageState extends State<resultpage> {
-
   List<String> images = [
     "images/success.png",
     "images/good.png",
@@ -20,14 +19,14 @@ class _resultpageState extends State<resultpage> {
   String image;
 
   @override
-  void initState(){
-    if(marks < 20){
+  void initState() {
+    if (marks < 20) {
       image = images[2];
       message = "You Should Try Hard..\n" + "You Scored $marks";
-    }else if(marks < 35){
+    } else if (marks < 35) {
       image = images[1];
       message = "You Can Do Better..\n" + "You Scored $marks";
-    }else{
+    } else {
       image = images[0];
       message = "You Did Very Well..\n" + "You Scored $marks";
     }
@@ -82,8 +81,7 @@ class _resultpageState extends State<resultpage> {
                               fontFamily: "Quando",
                             ),
                           ),
-                        )
-                    ),
+                        )),
                   ],
                 ),
               ),
@@ -94,8 +92,8 @@ class _resultpageState extends State<resultpage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                OutlineButton(
-                  onPressed: (){
+                TextButton(
+                  onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => exampage(),
                     ));
@@ -106,12 +104,12 @@ class _resultpageState extends State<resultpage> {
                       fontSize: 18.0,
                     ),
                   ),
-                  padding: EdgeInsets.symmetric(
+                  /*padding: EdgeInsets.symmetric(
                     vertical: 10.0,
                     horizontal: 25.0,
                   ),
                   borderSide: BorderSide(width: 3.0, color: Colors.indigo),
-                  splashColor: Colors.indigoAccent,
+                  splashColor: Colors.indigoAccent,*/
                 )
               ],
             ),

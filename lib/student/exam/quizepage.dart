@@ -37,7 +37,7 @@ class getjson extends StatelessWidget {
     // and now we return the FutureBuilder to load and decode JSON
     return FutureBuilder(
       future:
-      DefaultAssetBundle.of(context).loadString(assettoload, cache: false),
+          DefaultAssetBundle.of(context).loadString(assettoload, cache: false),
       builder: (context, snapshot) {
         List mydata = json.decode(snapshot.data.toString());
         if (mydata == null) {
@@ -93,15 +93,15 @@ class _quizpageState extends State<quizpage> {
   // to create the array elements randomly use the dart:math module
   // -----     CODE TO GENERATE ARRAY RANDOMLY
 
-  genrandomarray(){
+  genrandomarray() {
     var distinctIds = [];
     var rand = new Random();
-    for (int i = 0; ;) {
+    for (int i = 0;;) {
       distinctIds.add(rand.nextInt(10));
       random_array = distinctIds.toSet().toList();
-      if(random_array.length < 10){
+      if (random_array.length < 10) {
         continue;
-      }else{
+      } else {
         break;
       }
     }
@@ -180,7 +180,6 @@ class _quizpageState extends State<quizpage> {
   }
 
   void checkanswer(String k) {
-
     // in the previous version this was
     // mydata[2]["1"] == mydata[1]["1"][k]
     // which i forgot to change
@@ -230,7 +229,7 @@ class _quizpageState extends State<quizpage> {
         minWidth: 200.0,
         height: 45.0,
         shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       ),
     );
   }
@@ -244,21 +243,21 @@ class _quizpageState extends State<quizpage> {
         return showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: Text(
-                "Quizstar",
-              ),
-              content: Text("You Can't Go Back At This Stage."),
-              actions: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    'Ok',
+                  title: Text(
+                    "Quizstar",
                   ),
-                )
-              ],
-            ));
+                  content: Text("You Can't Go Back At This Stage."),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        'Ok',
+                      ),
+                    )
+                  ],
+                ));
       },
       child: Scaffold(
         body: Column(

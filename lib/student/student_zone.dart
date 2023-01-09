@@ -1,11 +1,12 @@
 import 'package:college_managment/Home_page.dart';
-import 'package:college_managment/utils/ZoneImage.dart';
 import 'academic_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'student_profile.dart';
 import 'fees.dart';
 import 'result.dart';
+
+import '../helper/helper.dart';
 
 class StudentZone extends StatefulWidget {
   @override
@@ -25,7 +26,10 @@ class _StudentZoneState extends State<StudentZone> {
                 return HomePage();
               }));
             },
-            child: Icon(Icons.arrow_back, size: 30,),
+            child: Icon(
+              Icons.arrow_back,
+              size: 30,
+            ),
           ),
           backgroundColor: Color(0xff002c51),
           centerTitle: true,
@@ -35,7 +39,10 @@ class _StudentZoneState extends State<StudentZone> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.logout, color: Colors.white,),
+              icon: Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
             )
           ],
         ),
@@ -43,69 +50,74 @@ class _StudentZoneState extends State<StudentZone> {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(
-                left: 25.0, right: 15.0, bottom: 16.0),
-
+            padding:
+                const EdgeInsets.only(left: 25.0, right: 15.0, bottom: 16.0),
             child: Column(children: <Widget>[
               SizedBox(height: 24),
               InkWell(
-                child:Row(
+                child: Row(
                   children: <Widget>[
                     InkWell(
-                        child: ZoneImage("assets/academic_calendar.png", "Calendar"),
-                        onTap:  () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) {
-                            return  Calendar();
+                        child: ZoneImage(
+                            "assets/academic_calendar.png", "Calendar"),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return Calendar();
                           }));
-                        }
+                        }),
+                    SizedBox(
+                      width: 14,
                     ),
-                    SizedBox(width: 14,),
                     InkWell(
-                        child: ZoneImage("assets/student_attendance.png", "Attendance"),
-                        onTap:  () {}
-                    )
+                        child: ZoneImage(
+                            "assets/student_attendance.png", "Attendance"),
+                        onTap: () {})
                   ],
                 ),
               ),
-              SizedBox(height: 14,),
+              SizedBox(
+                height: 14,
+              ),
               Row(
                 children: <Widget>[
                   InkWell(
                       child: ZoneImage("assets/student_result.png", "Result"),
-                      onTap:  () {
+                      onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
-                          return  Result();
+                          return Result();
                         }));
-                      }
+                      }),
+                  SizedBox(
+                    width: 14,
                   ),
-                  SizedBox(width: 14,),
                   InkWell(
                       child: ZoneImage("assets/academic_fees.png", "Fees"),
-                      onTap:  () {
+                      onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
-                          return  FeePage();
+                          return FeePage();
                         }));
-                      }
-                  ),
+                      }),
                 ],
               ),
-              SizedBox(height: 14,),
+              SizedBox(
+                height: 14,
+              ),
               Row(
                 children: <Widget>[
                   InkWell(
                       child: ZoneImage("assets/student_profile.png", "Profile"),
-                      onTap:  () {
+                      onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
                           return StudentProfile();
                         }));
-                      }
+                      }),
+                  SizedBox(
+                    width: 14,
                   ),
-                  SizedBox(width: 14,),
                   InkWell(
                       child: ZoneImage("assets/Exam.png", "Exam"),
-                      onTap:  () {
-                      }
-                  ),
+                      onTap: () {}),
                 ],
               ),
             ]),
@@ -115,5 +127,3 @@ class _StudentZoneState extends State<StudentZone> {
     );
   }
 }
-
-

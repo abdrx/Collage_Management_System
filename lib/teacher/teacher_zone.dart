@@ -3,8 +3,9 @@ import 'package:college_managment/teacher/schedule/schedule.dart';
 import 'teacher_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:college_managment/utils/ZoneImage.dart';
 import 'salary.dart';
+
+import '../helper/helper.dart';
 
 class TeacherZone extends StatefulWidget {
   @override
@@ -24,9 +25,12 @@ class _TeacherZoneState extends State<TeacherZone> {
                 return HomePage();
               }));
             },
-            child: Icon(Icons.arrow_back, size: 30,),
+            child: Icon(
+              Icons.arrow_back,
+              size: 30,
+            ),
           ),
-          backgroundColor:  Color(0xfff5435d),
+          backgroundColor: Color(0xfff5435d),
           centerTitle: true,
           title: Text(
             'TEACHER ZONE',
@@ -34,8 +38,10 @@ class _TeacherZoneState extends State<TeacherZone> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.logout,color: Colors.white,),
-
+              icon: Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
             )
           ],
         ),
@@ -43,49 +49,54 @@ class _TeacherZoneState extends State<TeacherZone> {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(
-                left: 25.0, right: 15.0, bottom: 16.0),
+            padding:
+                const EdgeInsets.only(left: 25.0, right: 15.0, bottom: 16.0),
             child: Column(children: <Widget>[
               SizedBox(height: 24),
               InkWell(
-                child:Row(
+                child: Row(
                   children: <Widget>[
                     InkWell(
                         child: ZoneImage("assets/schedule.png", "Schedule"),
-                        onTap:  () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
                             return main();
                           }));
-                        }
+                        }),
+                    SizedBox(
+                      width: 14,
                     ),
-                    SizedBox(width: 14,),
                     InkWell(
-                        child: ZoneImage("assets/student_attendance_faculty.png", "Attendance"),
-                        onTap:  () {}
-                    )
+                        child: ZoneImage(
+                            "assets/student_attendance_faculty.png",
+                            "Attendance"),
+                        onTap: () {})
                   ],
                 ),
               ),
-              SizedBox(height: 14,),
+              SizedBox(
+                height: 14,
+              ),
               Row(
                 children: <Widget>[
                   InkWell(
                       child: ZoneImage("assets/salary.png", "Salary"),
-                      onTap:  () {
+                      onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
                           return salary();
                         }));
-                      }
+                      }),
+                  SizedBox(
+                    width: 14,
                   ),
-                  SizedBox(width: 14,),
                   InkWell(
                       child: ZoneImage("assets/faculty_profile.png", "Profile"),
-                      onTap:  () {
+                      onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
                           return TeacherProfile();
                         }));
-                      }
-                  ),
+                      }),
                 ],
               ),
             ]),
@@ -95,5 +106,3 @@ class _TeacherZoneState extends State<TeacherZone> {
     );
   }
 }
-
-
