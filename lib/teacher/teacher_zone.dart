@@ -41,7 +41,7 @@ class _TeacherZoneState extends State<TeacherZone> {
               icon: Icon(
                 Icons.logout,
                 color: Colors.white,
-              ),
+              ), onPressed: () {  },
             )
           ],
         ),
